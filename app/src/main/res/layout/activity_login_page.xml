@@ -50,27 +50,32 @@ to your account"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:layout_width="330dp"
-        android:layout_height="30dp"
+        android:id="@+id/textView4"
+        android:layout_width="347dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppinssemibold"
         android:text="Password"
         android:textAlignment="textStart"
         android:textColor="#8971E8"
         android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="451dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailtxt"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="330dp"
+        android:layout_width="348dp"
         android:layout_height="30dp"
         android:fontFamily="@font/poppinssemibold"
         android:text="Email"
         android:textAlignment="textStart"
         android:textColor="#8971E8"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="354dp" />
 
     <EditText
@@ -85,8 +90,10 @@ to your account"
         android:inputType="textEmailAddress"
         android:textColor="@color/white"
         android:textColorHint="#9F9F9F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="34dp"
         tools:layout_editor_absoluteY="384dp" />
 
     <EditText
@@ -101,8 +108,9 @@ to your account"
         android:inputType="textEmailAddress"
         android:textColor="@color/white"
         android:textColorHint="#9F9F9F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="481dp" />
 
     <Button
@@ -114,13 +122,16 @@ to your account"
         android:height="70dp"
         android:backgroundTint="#8971E8"
         android:fontFamily="@font/poppinssemibold"
+        android:letterSpacing="0"
         android:padding="2dp"
         android:text="LOGIN"
         android:textSize="17dp"
-        android:letterSpacing="0"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordtxt"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
