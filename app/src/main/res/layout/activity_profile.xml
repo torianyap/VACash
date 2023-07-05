@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile"
+    android:background="@color/bgdarkblue">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="@drawable/profile_rectangle"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/home_icon"
+            android:gravity="start"
+            android:layout_margin="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="40dp"
+            android:text="Profile Page"
+            android:textSize="20dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:textColor="@color/white"/>
+        
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="end"
+            android:background="@drawable/bar_icon"
+            android:layout_margin="40dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="345dp"
+        android:layout_height="270dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-105dp"
+        app:cardCornerRadius="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/profile"/>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="25dp"
+                android:text="User823"
+                android:textSize="16dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/lightpurple"/>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="25dp"
+                android:text="user@mail.com"
+                android:textSize="12dp"
+                android:fontFamily="@font/poppinsregular"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/grey"/>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnCount="3"
+                android:rowCount="1"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:useDefaultMargins="true"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="end">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="Your Balance"
+                        android:textSize="13dp"
+                        android:textColor="@color/lightpurple"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:gravity="end"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="0 IDR"
+                        android:textSize="16dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppinssemibold"
+                        />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/line_profile"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="start">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Topup Balance"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textColor="@color/lightpurple"
+                        android:gravity="start"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:text="Error messsage"
+                        android:textSize="7dp"
+                        android:visibility="invisible"
+                        android:fontFamily="@font/poppinsregular"
+                        android:textColor="@color/red"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <EditText
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:hint="min 0 IDR"
+                            android:textSize="10dp"
+                            android:fontFamily="@font/poppinsregular"
+                            android:textColor="@color/black"/>
+                        <Button
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:text="✓"
+                            android:backgroundTint="@color/lightpurple"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </GridLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

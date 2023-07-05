@@ -16,6 +16,20 @@
             android:name=".LoginPage"
             android:exported="false" />
         <activity
+            android:name=".Profile"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".profile"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".login_page1"
             android:exported="true">
             <intent-filter>
