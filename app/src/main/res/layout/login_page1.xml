@@ -38,7 +38,7 @@ Experience by Buying Game’s Cash Item Easily"
         app:layout_constraintVertical_bias="0.16" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_loginpage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
