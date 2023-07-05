@@ -18,6 +18,7 @@ Experience by Buying Game’s Cash Item Easily"
         android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
+        android:lineHeight="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -34,6 +35,25 @@ Experience by Buying Game’s Cash Item Easily"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
+        app:layout_constraintVertical_bias="0.16" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:width="345dp"
+        android:height="70dp"
+        android:backgroundTint="#E76C7F"
+        android:fontFamily="@font/poppinssemibold"
+        android:padding="2dp"
+        android:text="GET STARTED"
+        android:textSize="17dp"
+        android:letterSpacing="0"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
