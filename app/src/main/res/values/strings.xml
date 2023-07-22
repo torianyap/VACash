@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">VACash</string>
+
+    <string-array name="ItemName">
+        <item>World Lock</item>
+        <item>Bunny Lock</item>
+        <item>Green Gem Lock</item>
+    </string-array>
+
+    <string-array name="StoreName">
+        <item>GGwp Store</item>
+        <item>GGwp Store</item>
+        <item>HatBox Store</item>
+    </string-array>
+
+    <string-array name="StoreDetail">
+        <item>trusted since 2020</item>
+        <item>trusted since 2020</item>
+        <item>trusted since 2019</item>
+    </string-array>
+
+    <string-array name="Price">
+        <item>1.000 IDR</item>
+        <item>3.000 IDR</item>
+        <item>366.000 IDR</item>
+    </string-array>
 </resources>
