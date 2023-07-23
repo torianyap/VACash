@@ -5,14 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class DetailPage extends AppCompatActivity {
     LinearLayout minus, plus;
     View backButton;
-    TextView quantityField;
+    TextView quantityField, username, email;
     Integer qty;
+    Button payBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,12 @@ public class DetailPage extends AppCompatActivity {
         plus.setOnClickListener(v -> {
             qty++;
             quantityField.setText(qty.toString());
+        });
+
+        // pay button
+        payBtn = findViewById(R.id.payButton);
+        payBtn.setOnClickListener(v -> {
+
         });
     }
 }

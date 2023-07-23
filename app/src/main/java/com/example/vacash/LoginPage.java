@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.vacash.models.GlobalVariable;
+
 
 public class LoginPage extends AppCompatActivity {
 
@@ -49,6 +51,8 @@ public class LoginPage extends AppCompatActivity {
             showError("Password's length must be more than 8 characters.");
         } else {
             hideError();
+            GlobalVariable.email = email;
+            GlobalVariable.username = email.substring(0, email.indexOf('@'));
             navigateToHome();
         }
     }
