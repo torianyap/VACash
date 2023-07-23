@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
 import com.example.vacash.adapters.Game1_RecyclerViewAdapter;
@@ -23,6 +24,8 @@ public class ItemPage extends AppCompatActivity {
     ArrayList<com.example.vacash.models.ItemModel> ItemModel = new ArrayList<>();
     ImageButton homeIcon;
     ImageButton hamburgerIcon;
+    AnimatorSet slideDownAnimatorSet;
+//    View slidingView;
 
 
     int[] itemImg = {R.drawable.growtopia, R.drawable.growtopia, R.drawable.growtopia};
@@ -40,6 +43,9 @@ public class ItemPage extends AppCompatActivity {
         homeIcon = findViewById(R.id.home_icon);
         hamburgerIcon = findViewById(R.id.hamburgerIcon);
 
+        slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
+        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu);
+
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +60,7 @@ public class ItemPage extends AppCompatActivity {
             }
         });
     }
+
 
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
@@ -74,6 +81,7 @@ public class ItemPage extends AppCompatActivity {
                 }
             }
         });
+        slideDownAnimatorSet.start();
         popupMenu.show();
 
         // Change background color when the dropdown is shown

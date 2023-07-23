@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">VACash</string>
 
+<!--    Game Growtopia-->
     <string-array name="ItemName">
         <item>World Lock</item>
         <item>Bunny Lock</item>
