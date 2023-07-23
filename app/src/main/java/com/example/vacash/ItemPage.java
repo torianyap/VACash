@@ -13,11 +13,14 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
+import com.example.vacash.adapters.Game1_RecyclerViewAdapter;
+import com.example.vacash.models.ItemModel;
+
 import java.util.ArrayList;
 
 public class ItemPage extends AppCompatActivity {
 
-    ArrayList<ItemModel> ItemModel = new ArrayList<>();
+    ArrayList<com.example.vacash.models.ItemModel> ItemModel = new ArrayList<>();
     ImageButton homeIcon;
     ImageButton hamburgerIcon;
 
