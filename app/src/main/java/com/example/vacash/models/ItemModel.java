@@ -1,4 +1,4 @@
-package com.example.vacash;
+package com.example.vacash.models;
 
 public class ItemModel {
 
@@ -10,19 +10,19 @@ public class ItemModel {
     int storeIcon;
 
     public ItemModel(String itemName, String storeName, String storeDetail, String itemPrice, int itemImg, int storeIcon) {
-        ItemName = itemName;
-        StoreName = storeName;
-        StoreDetail = storeDetail;
-        ItemPrice = itemPrice;
+        this.ItemName = itemName;
+        this.StoreName = storeName;
+        this.StoreDetail = storeDetail;
+        this.ItemPrice = itemPrice;
         this.itemImg = itemImg;
         this.storeIcon = storeIcon;
     }
 
     public ItemModel(String itemName, String storeName, String storeDetail, String itemPrice, int itemImg) {
-        ItemName = itemName;
-        StoreName = storeName;
-        StoreDetail = storeDetail;
-        ItemPrice = itemPrice;
+        this.ItemName = itemName;
+        this.StoreName = storeName;
+        this.StoreDetail = storeDetail;
+        this.ItemPrice = itemPrice;
         this.itemImg = itemImg;
     }
 

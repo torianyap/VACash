@@ -1,4 +1,4 @@
-package com.example.vacash;
+package com.example.vacash.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.vacash.R;
+import com.example.vacash.models.ItemModel;
 
 import java.util.ArrayList;
 

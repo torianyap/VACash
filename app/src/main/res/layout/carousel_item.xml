@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageCarousels"
+        android:layout_width="347dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="92dp"
+        android:src="@drawable/pubgwallpaper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundImageView" />
+
+
+    <TextView
+        android:id="@+id/limitedtime"
+        android:layout_width="339dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="LIMITED TIME"
+        android:textAlignment="textStart"
+        android:textColor="@color/btnpink"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/namagame"
+        android:layout_width="341dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="348dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="60dp"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textColor="@color/grey2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
