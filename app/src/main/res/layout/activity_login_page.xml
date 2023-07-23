@@ -8,7 +8,7 @@
     tools:context=".login_page1">
 
     <Button
-        android:id="@+id/button_loginpage"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -19,7 +19,7 @@
         android:letterSpacing="0"
         android:padding="2dp"
         android:text="LOGIN"
-        android:textSize="17sp"
+        android:textSize="17dp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046"
+        app:layout_constraintVertical_bias="0.107"
         app:srcCompat="@drawable/vacash" />
+
+    <EditText
+        android:id="@+id/emailtxt"
+        android:layout_width="345dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="30dp"
+        android:background="@drawable/textinputborder"
+        android:backgroundTint="#EBEBEB"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="#9F9F9F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
@@ -46,13 +65,13 @@
 to your account"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323" />
+        app:layout_constraintVertical_bias="0.361" />
 
     <TextView
         android:id="@+id/textView4"
@@ -65,10 +84,10 @@ to your account"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596"
+        app:layout_constraintVertical_bias="0.616"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -82,46 +101,11 @@ to your account"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
+        app:layout_constraintVertical_bias="0.469"
         tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/emailtxt"
-        android:layout_width="345dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="30dp"
-        android:background="@drawable/textinputborder"
-        android:backgroundTint="#EBEBEB"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/bgdarkblue"
-        android:textColorHint="#9F9F9F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.491"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="346dp"
-        android:layout_height="27dp"
-        android:fontFamily="@font/poppinsbold"
-        android:text="Welcome Back"
-        android:textAlignment="center"
-        android:textColor="#8971E8"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.261" />
 
     <EditText
         android:id="@+id/passwordtxt"
@@ -132,28 +116,31 @@ to your account"
         android:background="@drawable/textinputborder"
         android:backgroundTint="@color/white"
         android:hint="Password"
-        android:inputType="textPassword"
+        android:inputType="textEmailAddress"
         android:textColor="@color/white"
         android:textColorHint="#9F9F9F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675"
+        app:layout_constraintVertical_bias="0.696"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/error_message"
+        android:id="@+id/textView"
         android:layout_width="346dp"
-        android:layout_height="30dp"
-        android:fontFamily="p"
-        android:text="errorz"
-        android:textColor="@color/red"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="554dp"
+        android:layout_height="27dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Welcome Back"
         android:textAlignment="center"
-        />
+        android:textColor="#8971E8"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

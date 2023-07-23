@@ -26,12 +26,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".profile"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:name=".Homepage"
+            android:exported="false" />
         <activity
             android:name=".login_page1"
             android:exported="true">
