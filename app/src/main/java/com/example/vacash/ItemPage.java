@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.vacash.adapters.Game1_RecyclerViewAdapter;
+import com.example.vacash.models.ItemModel;
+
 import java.util.ArrayList;
 
 public class ItemPage extends AppCompatActivity {
 
-    ArrayList<ItemModel> ItemModel = new ArrayList<>();
+    ArrayList<com.example.vacash.models.ItemModel> ItemModel = new ArrayList<>();
 
     int[] itemImg = {R.drawable.growtopia, R.drawable.growtopia, R.drawable.growtopia};
     @Override
