@@ -3,6 +3,7 @@ package com.example.vacash;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,7 +69,7 @@ public class mobile extends Fragment {
         HomeGameAdapter adapter = new HomeGameAdapter(view.getContext());
 
         homeRv.setAdapter(adapter);
-        homeRv.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        homeRv.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
         return view;
     }
 }
