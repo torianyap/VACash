@@ -37,7 +37,6 @@ public class Game1_RecyclerViewAdapter extends RecyclerView.Adapter<Game1_Recycl
         holder.storeName.setText(itemModels.get(position).getStoreName());
         holder.storeDetail.setText(itemModels.get(position).getStoreDetail());
         holder.itemPrice.setText(itemModels.get(position).getItemPrice());
-
     }
 
     @Override
