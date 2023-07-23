@@ -6,15 +6,20 @@
     tools:context=".mobile">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Mobile"
-        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppinsmedium"
-        android:textSize="16sp"/>
+        android:text="Best Mobile Game"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
 
     <GridLayout
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="2"
@@ -22,12 +27,14 @@
         android:useDefaultMargins="true"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_rv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="728dp"
 
-            />
+            android:layout_row="0"
+            android:layout_column="0" />
     </GridLayout>
 
 </FrameLayout>
