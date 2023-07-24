@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.vacash.console;
-import com.example.vacash.mobile;
-import com.example.vacash.pc;
+import com.example.vacash.fragments.ConsoleFragment;
+import com.example.vacash.fragments.MobileFragment;
+import com.example.vacash.fragments.PCFragment;
 
 public class homeAdapter extends FragmentStateAdapter {
     public homeAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
@@ -19,11 +19,11 @@ public class homeAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            case 0: return new mobile();
-            case 1: return new pc();
-            case 2: return new console();
+            case 0: return new MobileFragment();
+            case 1: return new PCFragment();
+            case 2: return new ConsoleFragment();
         }
-        return new mobile();
+        return new MobileFragment();
     }
 
     @Override

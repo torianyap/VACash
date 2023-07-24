@@ -1,4 +1,4 @@
-package com.example.vacash;
+package com.example.vacash.fragments;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vacash.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link pc#newInstance} factory method to
+ * Use the {@link PCFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class pc extends Fragment {
+public class PCFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class pc extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public pc() {
+    public PCFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class pc extends Fragment {
      * @return A new instance of fragment pc.
      */
     // TODO: Rename and change types and number of parameters
-    public static pc newInstance(String param1, String param2) {
-        pc fragment = new pc();
+    public static PCFragment newInstance(String param1, String param2) {
+        PCFragment fragment = new PCFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

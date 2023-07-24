@@ -1,4 +1,4 @@
-package com.example.vacash;
+package com.example.vacash.fragments;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vacash.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link console#newInstance} factory method to
+ * Use the {@link ConsoleFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class console extends Fragment {
+public class ConsoleFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class console extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public console() {
+    public ConsoleFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class console extends Fragment {
      * @return A new instance of fragment console.
      */
     // TODO: Rename and change types and number of parameters
-    public static console newInstance(String param1, String param2) {
-        console fragment = new console();
+    public static ConsoleFragment newInstance(String param1, String param2) {
+        ConsoleFragment fragment = new ConsoleFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

@@ -1,24 +1,27 @@
-package com.example.vacash;
+package com.example.vacash.fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vacash.R;
 import com.example.vacash.adapters.HomeGameAdapter;
+import com.example.vacash.models.GlobalVariable;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link mobile#newInstance} factory method to
+ * Use the {@link MobileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class mobile extends Fragment {
+public class MobileFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +32,7 @@ public class mobile extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public mobile() {
+    public MobileFragment() {
         // Required empty public constructor
     }
 
@@ -42,8 +45,8 @@ public class mobile extends Fragment {
      * @return A new instance of fragment mobile.
      */
     // TODO: Rename and change types and number of parameters
-    public static mobile newInstance(String param1, String param2) {
-        mobile fragment = new mobile();
+    public static MobileFragment newInstance(String param1, String param2) {
+        MobileFragment fragment = new MobileFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,12 +64,13 @@ public class mobile extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        ArrayList games = GlobalVariable.filterGameByType("Mobile");
+
         View view = inflater.inflate(R.layout.fragment_mobile, container, false);
         RecyclerView homeRv = view.findViewById(R.id.home_rv);
-        HomeGameAdapter adapter = new HomeGameAdapter(view.getContext());
+        HomeGameAdapter adapter = new HomeGameAdapter(view.getContext(), games);
 
         homeRv.setAdapter(adapter);
         homeRv.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
