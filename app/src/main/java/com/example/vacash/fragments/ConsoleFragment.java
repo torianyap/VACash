@@ -3,12 +3,18 @@ package com.example.vacash.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.vacash.R;
+import com.example.vacash.adapters.HomeGameAdapter;
+import com.example.vacash.models.GlobalVariable;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +67,15 @@ public class ConsoleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_console, container, false);
+
+        ArrayList games = GlobalVariable.filterGameByType("Console");
+
+        View view = inflater.inflate(R.layout.fragment_console, container, false);
+        RecyclerView homeRv = view.findViewById(R.id.home_rv);
+        HomeGameAdapter adapter = new HomeGameAdapter(view.getContext(), games);
+
+        homeRv.setAdapter(adapter);
+        homeRv.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
+        return view;
     }
 }
