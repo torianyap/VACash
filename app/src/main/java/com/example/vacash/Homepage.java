@@ -11,6 +11,7 @@ import android.os.Bundle;
 import com.example.vacash.adapters.CarouselAdapter;
 import com.example.vacash.adapters.HomeGameAdapter;
 import com.example.vacash.adapters.homeAdapter;
+import com.example.vacash.models.GlobalVariable;
 import com.google.android.material.tabs.TabLayout;
 
 public class Homepage extends AppCompatActivity {
@@ -29,6 +30,8 @@ public class Homepage extends AppCompatActivity {
     homeAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        GlobalVariable.init();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
 

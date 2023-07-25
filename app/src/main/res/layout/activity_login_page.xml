@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgdarkblue"
-    tools:context=".login_page1">
+    tools:context=".SplashPage">
 
     <Button
         android:id="@+id/loginbutton"

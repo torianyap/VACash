@@ -89,7 +89,7 @@ public class ItemPage extends AppCompatActivity {
     }
 
     private void navigateToLogout() {
-        Intent intent = new Intent(this, login_page1.class);
+        Intent intent = new Intent(this, SplashPage.class);
         startActivity(intent);
     }
 

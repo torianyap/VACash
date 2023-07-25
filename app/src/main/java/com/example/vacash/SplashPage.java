@@ -7,14 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class login_page1 extends AppCompatActivity {
+import com.example.vacash.models.GlobalVariable;
+
+import java.util.ArrayList;
+
+public class SplashPage extends AppCompatActivity {
 
     Button buttonloginpage1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page1);
+        setContentView(R.layout.splash_page);
+
+        // init variables
+        GlobalVariable.init();
 
         buttonloginpage1 = findViewById(R.id.button_loginpage1);
         buttonloginpage1.setOnClickListener(new View.OnClickListener() {

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".console">
+    tools:context=".fragments.ConsoleFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -11,7 +11,24 @@
         android:layout_height="match_parent"
         android:text="Console"
         android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/poppinsmedium"
         android:textSize="16sp"/>
+
+    <GridLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_rv"
+            android:layout_width="match_parent"
+            android:layout_height="728dp"/>
+    </GridLayout>
 
 </FrameLayout>
