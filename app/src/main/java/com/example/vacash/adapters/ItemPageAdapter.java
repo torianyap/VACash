@@ -29,7 +29,7 @@ public class ItemPageAdapter extends RecyclerView.Adapter<ItemPageAdapter.MyView
     @Override
     public ItemPageAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.recycler_view_row, parent, false);
+        View view = inflater.inflate(R.layout.item_recycler_row, parent, false);
         return new MyViewHolder(view);
     }
 

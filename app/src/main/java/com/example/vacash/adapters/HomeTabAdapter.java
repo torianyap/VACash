@@ -10,8 +10,8 @@ import com.example.vacash.fragments.ConsoleFragment;
 import com.example.vacash.fragments.MobileFragment;
 import com.example.vacash.fragments.PCFragment;
 
-public class homeAdapter extends FragmentStateAdapter {
-    public homeAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+public class HomeTabAdapter extends FragmentStateAdapter {
+    public HomeTabAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 

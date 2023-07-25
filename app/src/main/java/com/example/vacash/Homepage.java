@@ -1,16 +1,13 @@
 package com.example.vacash;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
 import com.example.vacash.adapters.CarouselAdapter;
-import com.example.vacash.adapters.HomeGameAdapter;
-import com.example.vacash.adapters.homeAdapter;
+import com.example.vacash.adapters.HomeTabAdapter;
 import com.example.vacash.models.GlobalVariable;
 import com.google.android.material.tabs.TabLayout;
 
@@ -27,13 +24,13 @@ public class Homepage extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager2 viewpagertab;
-    homeAdapter adapter;
+    HomeTabAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         GlobalVariable.init();
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.activity_home_page);
 
         carouselContainer = findViewById(R.id.carouselContainer);
 
@@ -45,7 +42,7 @@ public class Homepage extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tabLayout);
         viewpagertab = findViewById(R.id.tabViewPagerGame);
-        adapter = new homeAdapter(getSupportFragmentManager(), getLifecycle());
+        adapter = new HomeTabAdapter(getSupportFragmentManager(), getLifecycle());
 
         viewpagertab.setAdapter(adapter);
 
@@ -55,7 +52,6 @@ public class Homepage extends AppCompatActivity {
 
         //klik tab sinkronin ke viewpager
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewpagertab.setCurrentItem(tab.getPosition());

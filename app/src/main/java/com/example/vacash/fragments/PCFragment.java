@@ -71,7 +71,7 @@ public class PCFragment extends Fragment implements RecyclerViewInterface {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ArrayList games = GlobalVariable.filterGameByType("PC");
+        ArrayList<GameWithItems> games = GlobalVariable.filterGameByType("PC");
 
         View view = inflater.inflate(R.layout.fragment_pc, container, false);
         RecyclerView homeRv = view.findViewById(R.id.home_rv);

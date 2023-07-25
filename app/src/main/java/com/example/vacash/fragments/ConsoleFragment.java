@@ -72,7 +72,7 @@ public class ConsoleFragment extends Fragment implements RecyclerViewInterface {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        ArrayList games = GlobalVariable.filterGameByType("Console");
+        ArrayList<GameWithItems> games = GlobalVariable.filterGameByType("Console");
 
         View view = inflater.inflate(R.layout.fragment_console, container, false);
         RecyclerView homeRv = view.findViewById(R.id.home_rv);

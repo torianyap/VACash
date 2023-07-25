@@ -36,7 +36,6 @@ public class MobileFragment extends Fragment implements RecyclerViewInterface {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    ArrayList games = GlobalVariable.filterGameByType("Mobile");
 
     public MobileFragment() {
         // Required empty public constructor
@@ -74,6 +73,8 @@ public class MobileFragment extends Fragment implements RecyclerViewInterface {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_mobile, container, false);
         RecyclerView homeRv = view.findViewById(R.id.home_rv);
+
+        ArrayList<GameWithItems> games = GlobalVariable.filterGameByType("Mobile");
         HomeGameAdapter adapter = new HomeGameAdapter(view.getContext(), games, this);
 
         homeRv.setAdapter(adapter);

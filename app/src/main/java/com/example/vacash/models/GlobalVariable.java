@@ -12,8 +12,8 @@ public class GlobalVariable {
 
     public static ArrayList<GameWithItems> games = new ArrayList<>();
     public static ArrayList<TransactionModel> transactions = new ArrayList<>();
-    
-    public static ArrayList filterGameByType (String type) {
+
+    public static ArrayList<GameWithItems> filterGameByType (String type) {
         ArrayList<GameWithItems> filtered = new ArrayList<>();
         for (GameWithItems game: games) {
             if (game.gameType.equalsIgnoreCase(type)) {

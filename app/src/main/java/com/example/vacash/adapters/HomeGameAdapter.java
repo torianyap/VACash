@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vacash.R;
 import com.example.vacash.models.GameWithItems;
-import com.example.vacash.models.GlobalVariable;
 import com.example.vacash.models.RecyclerViewInterface;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class HomeGameAdapter extends RecyclerView.Adapter<HomeGameAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.gamecard, parent, false);
+        View v = inflater.inflate(R.layout.home_game_card, parent, false);
         return new MyViewHolder(v, recyclerViewInterface);
     }
 
