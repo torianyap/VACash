@@ -29,7 +29,7 @@ public class HomeGameAdapter extends RecyclerView.Adapter<HomeGameAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.mobilegame, parent, false);
+        View v = inflater.inflate(R.layout.gamecard, parent, false);
         return new MyViewHolder(v);
     }
 

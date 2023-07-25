@@ -120,7 +120,7 @@ public class GlobalVariable {
         games.add(growtopia);
 
         // Apex Legends
-        GameWithItems apex = new GameWithItems("Apex Legends", "PC", "Electronic Arts", 4.5, R.drawable.apex);
+        GameWithItems apex = new GameWithItems("Apex Legends", "PC", "Electronic Arts", 4.5, R.drawable.apexpc);
         apex.items.add(new ItemModel("1000 Apex Coins", "AJP Store", "Trusted since 2016", "155000", R.drawable.apex));
         apex.items.add(new ItemModel("2000 Apex Coins", "Luxvry Store", "Trusted since 2016", "298000", R.drawable.apex));
         apex.items.add(new ItemModel("2500 Apex Coins", "AJP Store", "Trusted since 2016", "360000", R.drawable.apex));
