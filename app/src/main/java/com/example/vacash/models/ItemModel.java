@@ -1,6 +1,11 @@
 package com.example.vacash.models;
 
-public class ItemModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class ItemModel implements Parcelable {
 
     String ItemName;
     String StoreName;
@@ -26,6 +31,27 @@ public class ItemModel {
         this.itemImg = itemImg;
     }
 
+    protected ItemModel(Parcel in) {
+        ItemName = in.readString();
+        StoreName = in.readString();
+        StoreDetail = in.readString();
+        ItemPrice = in.readString();
+        itemImg = in.readInt();
+        storeIcon = in.readInt();
+    }
+
+    public static final Creator<ItemModel> CREATOR = new Creator<ItemModel>() {
+        @Override
+        public ItemModel createFromParcel(Parcel in) {
+            return new ItemModel(in);
+        }
+
+        @Override
+        public ItemModel[] newArray(int size) {
+            return new ItemModel[size];
+        }
+    };
+
     public String getItemName() {
         return ItemName;
     }
@@ -48,5 +74,20 @@ public class ItemModel {
 
     public int getStoreIcon() {
         return storeIcon;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeString(ItemName);
+        parcel.writeString(StoreName);
+        parcel.writeString(StoreDetail);
+        parcel.writeString(ItemPrice);
+        parcel.writeInt(itemImg);
+        parcel.writeInt(storeIcon);
     }
 }

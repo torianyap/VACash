@@ -12,9 +12,11 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
-import com.example.vacash.adapters.Game1_RecyclerViewAdapter;
+import com.example.vacash.adapters.ItemPageAdapter;
 import com.example.vacash.models.ItemModel;
 
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ public class ItemPage extends AppCompatActivity {
     AnimatorSet slideDownAnimatorSet;
 //    View slidingView;
 
+    ArrayList<ItemModel> items;
 
     int[] itemImg = {R.drawable.growtopia, R.drawable.growtopia, R.drawable.growtopia};
     @Override
@@ -34,9 +37,19 @@ public class ItemPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_page);
 
+        items = this.getIntent().getExtras().getParcelableArrayList("Items");
+        String gameName = this.getIntent().getExtras().getString("gameName");
+        Integer gameIcon = this.getIntent().getExtras().getInt("gameIcon");
+
+        ImageView gameIconView = findViewById(R.id.imageView5);
+        gameIconView.setImageResource(gameIcon);
+
+        TextView gameNameView = findViewById(R.id.textView5);
+        gameNameView.setText(gameName);
+
         RecyclerView recyclerView = findViewById(R.id.mRecycleView);
         setUpItemModel();
-        Game1_RecyclerViewAdapter adapter = new Game1_RecyclerViewAdapter(this, ItemModel);
+        ItemPageAdapter adapter = new ItemPageAdapter(this, items);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

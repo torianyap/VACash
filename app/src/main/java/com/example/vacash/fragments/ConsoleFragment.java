@@ -1,5 +1,6 @@
 package com.example.vacash.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,9 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vacash.ItemPage;
 import com.example.vacash.R;
 import com.example.vacash.adapters.HomeGameAdapter;
+import com.example.vacash.models.GameWithItems;
 import com.example.vacash.models.GlobalVariable;
+import com.example.vacash.models.RecyclerViewInterface;
 
 import java.util.ArrayList;
 
@@ -21,7 +25,7 @@ import java.util.ArrayList;
  * Use the {@link ConsoleFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ConsoleFragment extends Fragment {
+public class ConsoleFragment extends Fragment implements RecyclerViewInterface {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,10 +76,25 @@ public class ConsoleFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_console, container, false);
         RecyclerView homeRv = view.findViewById(R.id.home_rv);
-        HomeGameAdapter adapter = new HomeGameAdapter(view.getContext(), games);
+        HomeGameAdapter adapter = new HomeGameAdapter(view.getContext(), games, this);
 
         homeRv.setAdapter(adapter);
         homeRv.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
         return view;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        ArrayList<GameWithItems> games = GlobalVariable.filterGameByType("Console");
+
+        Intent i = new Intent(getActivity(), ItemPage.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("Items", games.get(position).getItems());
+        bundle.putString("gameName", games.get(position).getGameName());
+        bundle.putInt("gameIcon", games.get(position).getGameIcon());
+
+        i.putExtras(bundle);
+        startActivity(i);
     }
 }

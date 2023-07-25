@@ -15,31 +15,31 @@ import com.example.vacash.models.ItemModel;
 
 import java.util.ArrayList;
 
-public class Game1_RecyclerViewAdapter extends RecyclerView.Adapter<Game1_RecyclerViewAdapter.MyViewHolder> {
+public class ItemPageAdapter extends RecyclerView.Adapter<ItemPageAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<ItemModel> itemModels;
 
-    public Game1_RecyclerViewAdapter(Context context, ArrayList<ItemModel> itemModels){
-
+    public ItemPageAdapter(Context context, ArrayList<ItemModel> itemModels){
         this.context = context;
         this.itemModels = itemModels;
     }
 
     @NonNull
     @Override
-    public Game1_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemPageAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_row, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Game1_RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemPageAdapter.MyViewHolder holder, int position) {
         holder.itemName.setText(itemModels.get(position).getItemName());
         holder.storeName.setText(itemModels.get(position).getStoreName());
         holder.storeDetail.setText(itemModels.get(position).getStoreDetail());
         holder.itemPrice.setText(itemModels.get(position).getItemPrice());
+        holder.imageView.setImageResource(itemModels.get(position).getItemImg());
     }
 
     @Override

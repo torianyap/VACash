@@ -11,18 +11,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vacash.R;
+import com.example.vacash.models.GameWithItems;
 import com.example.vacash.models.GlobalVariable;
+import com.example.vacash.models.RecyclerViewInterface;
 
 import java.util.ArrayList;
 
 public class HomeGameAdapter extends RecyclerView.Adapter<HomeGameAdapter.MyViewHolder> {
 
     Context context;
-    ArrayList<GlobalVariable.GameWithItems> games;
+    ArrayList<GameWithItems> games;
 
-    public HomeGameAdapter(Context context, ArrayList<GlobalVariable.GameWithItems> games) {
+    private final RecyclerViewInterface recyclerViewInterface;
+
+    public HomeGameAdapter(Context context, ArrayList<GameWithItems> games, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.games = games;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -30,7 +35,7 @@ public class HomeGameAdapter extends RecyclerView.Adapter<HomeGameAdapter.MyView
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.gamecard, parent, false);
-        return new MyViewHolder(v);
+        return new MyViewHolder(v, recyclerViewInterface);
     }
 
     @Override
@@ -46,17 +51,27 @@ public class HomeGameAdapter extends RecyclerView.Adapter<HomeGameAdapter.MyView
         return games.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView gameImage;
         TextView gameName, gameDeveloper, gameRating;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
             gameImage = itemView.findViewById(R.id.gameImage);
             gameName = itemView.findViewById(R.id.gameName);
             gameDeveloper = itemView.findViewById(R.id.gameDeveloper);
             gameRating = itemView.findViewById(R.id.gameRating);
+
+            itemView.setOnClickListener(view -> {
+                if (recyclerViewInterface != null) {
+                    int pos = getAdapterPosition();
+
+                    if (pos != RecyclerView.NO_POSITION) {
+                        recyclerViewInterface.onItemClick(pos);
+                    }
+                }
+            });
         }
     }
 }

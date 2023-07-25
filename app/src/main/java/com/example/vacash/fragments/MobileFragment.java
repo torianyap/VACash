@@ -1,5 +1,6 @@
 package com.example.vacash.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,9 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.vacash.Homepage;
+import com.example.vacash.ItemPage;
 import com.example.vacash.R;
 import com.example.vacash.adapters.HomeGameAdapter;
+import com.example.vacash.models.GameWithItems;
 import com.example.vacash.models.GlobalVariable;
+import com.example.vacash.models.RecyclerViewInterface;
 
 import java.util.ArrayList;
 
@@ -21,7 +26,7 @@ import java.util.ArrayList;
  * Use the {@link MobileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MobileFragment extends Fragment {
+public class MobileFragment extends Fragment implements RecyclerViewInterface {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,6 +36,7 @@ public class MobileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    ArrayList games = GlobalVariable.filterGameByType("Mobile");
 
     public MobileFragment() {
         // Required empty public constructor
@@ -66,14 +72,27 @@ public class MobileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ArrayList games = GlobalVariable.filterGameByType("Mobile");
-
         View view = inflater.inflate(R.layout.fragment_mobile, container, false);
         RecyclerView homeRv = view.findViewById(R.id.home_rv);
-        HomeGameAdapter adapter = new HomeGameAdapter(view.getContext(), games);
+        HomeGameAdapter adapter = new HomeGameAdapter(view.getContext(), games, this);
 
         homeRv.setAdapter(adapter);
         homeRv.setLayoutManager(new GridLayoutManager(view.getContext(), 2));
         return view;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        ArrayList<GameWithItems> games = GlobalVariable.filterGameByType("Mobile");
+
+        Intent i = new Intent(getActivity(), ItemPage.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("Items", games.get(position).getItems());
+        bundle.putString("gameName", games.get(position).getGameName());
+        bundle.putInt("gameIcon", games.get(position).getGameIcon());
+
+        i.putExtras(bundle);
+        startActivity(i);
     }
 }
