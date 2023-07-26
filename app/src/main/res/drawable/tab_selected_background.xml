@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:right="5dp" android:left="5dp">
         <shape>
             <gradient
                 android:startColor="#89004C"
@@ -9,4 +9,4 @@
             <corners android:radius="5dp"/>
         </shape>
     </item>
-</selector>
+</layer-list>

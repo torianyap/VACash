@@ -2,9 +2,13 @@ package com.example.vacash.models;
 
 import com.example.vacash.R;
 import com.example.vacash.models.TransactionModel;
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableList;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class GlobalVariable {
@@ -35,11 +39,17 @@ public class GlobalVariable {
     }
 
     public static String formatCurrency (String num) {
-        Integer toBeFormatted = Integer.parseInt(num);
+//        Integer toBeFormatted = Integer.parseInt(num);
+//
+//        Locale locale = new Locale.Builder().setLanguage("id").setRegion("ID").build();
+//        NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
+//        return formatter.format(toBeFormatted);
 
-        Locale locale = new Locale.Builder().setLanguage("id").setRegion("ID").build();
-        NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
-        return formatter.format(toBeFormatted);
+        StringBuilder sb = new StringBuilder(num);
+        sb.reverse();
+        Iterable<String> tokens = Splitter.fixedLength(3).split(sb.toString());
+
+        return Joiner.on('.').join(ImmutableList.copyOf(tokens).reverse()) + " IDR";
     }
 
     public static String countTotalPrice (String price, Integer qty) {
@@ -47,7 +57,6 @@ public class GlobalVariable {
         Integer total = p * qty;
         return formatCurrency(total.toString());
     }
-
 
     public static void init () {
         // mobile legend

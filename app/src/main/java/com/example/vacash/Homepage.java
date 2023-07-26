@@ -5,6 +5,8 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.vacash.adapters.CarouselAdapter;
 import com.example.vacash.adapters.HomeTabAdapter;
@@ -49,6 +51,15 @@ public class Homepage extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Mobile"));
         tabLayout.addTab(tabLayout.newTab().setText("PC"));
         tabLayout.addTab(tabLayout.newTab().setText("Console"));
+
+        // set space between tabs
+        ViewGroup slidingTabStrip = (ViewGroup) tabLayout.getChildAt(0);
+
+        for (int i=0; i<slidingTabStrip.getChildCount()-1; i++) {
+            View v = slidingTabStrip.getChildAt(i);
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            params.rightMargin = 85;
+        }
 
         //klik tab sinkronin ke viewpager
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){

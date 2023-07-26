@@ -58,7 +58,7 @@ public class HomeGameAdapter extends RecyclerView.Adapter<HomeGameAdapter.MyView
         return games.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView gameImage;
         TextView gameName, gameDeveloper, gameRating;
 

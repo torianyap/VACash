@@ -14,10 +14,6 @@ public class GameWithItems {
         return gameName;
     }
 
-    public String getGameType() {
-        return gameType;
-    }
-
     public String getGameDeveloper() {
         return gameDeveloper;
     }
