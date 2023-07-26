@@ -3,7 +3,9 @@ package com.example.vacash.models;
 import com.example.vacash.R;
 import com.example.vacash.models.TransactionModel;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class GlobalVariable {
     public static String username = "";
@@ -20,8 +22,32 @@ public class GlobalVariable {
                 filtered.add(game);
             }
         }
-        return  filtered;
+        return filtered;
     }
+
+    public static GameWithItems filterGameByName (String name) {
+        for (GameWithItems game: games) {
+            if (game.gameName.equalsIgnoreCase(name)) {
+                return game;
+            }
+        }
+        return games.get(0);
+    }
+
+    public static String formatCurrency (String num) {
+        Integer toBeFormatted = Integer.parseInt(num);
+
+        Locale locale = new Locale.Builder().setLanguage("id").setRegion("ID").build();
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
+        return formatter.format(toBeFormatted);
+    }
+
+    public static String countTotalPrice (String price, Integer qty) {
+        Integer p = Integer.parseInt(price);
+        Integer total = p * qty;
+        return formatCurrency(total.toString());
+    }
+
 
     public static void init () {
         // mobile legend

@@ -17,29 +17,29 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.example.vacash.adapters.ItemPageAdapter;
+import com.example.vacash.models.GlobalVariable;
 import com.example.vacash.models.ItemModel;
+import com.example.vacash.models.RecyclerViewInterface;
 
 import java.util.ArrayList;
 
-public class ItemPage extends AppCompatActivity {
-
-    ArrayList<com.example.vacash.models.ItemModel> ItemModel = new ArrayList<>();
+public class ItemPage extends AppCompatActivity implements RecyclerViewInterface {
     ImageButton homeIcon;
     ImageButton hamburgerIcon;
     AnimatorSet slideDownAnimatorSet;
 //    View slidingView;
 
     ArrayList<ItemModel> items;
+    String gameName;
 
-    int[] itemImg = {R.drawable.growtopia, R.drawable.growtopia, R.drawable.growtopia};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_page);
 
         items = this.getIntent().getExtras().getParcelableArrayList("Items");
-        String gameName = this.getIntent().getExtras().getString("gameName");
-        Integer gameIcon = this.getIntent().getExtras().getInt("gameIcon");
+        gameName = this.getIntent().getExtras().getString("gameName");
+        int gameIcon = this.getIntent().getExtras().getInt("gameIcon");
 
         ImageView gameIconView = findViewById(R.id.imageView5);
         gameIconView.setImageResource(gameIcon);
@@ -48,8 +48,7 @@ public class ItemPage extends AppCompatActivity {
         gameNameView.setText(gameName);
 
         RecyclerView recyclerView = findViewById(R.id.mRecycleView);
-        setUpItemModel();
-        ItemPageAdapter adapter = new ItemPageAdapter(this, items);
+        ItemPageAdapter adapter = new ItemPageAdapter(this, items, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -116,19 +115,17 @@ public class ItemPage extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void setUpItemModel(){
-        String[] itemName = getResources().getStringArray(R.array.ItemName);
-        String[] storeName = getResources().getStringArray(R.array.StoreName);
-        String[] storeDetail = getResources().getStringArray(R.array.StoreDetail);
-        String[] itemPrice = getResources().getStringArray(R.array.Price);
+    @Override
+    public void onItemClick(int position) {
+        ItemModel selectedItem = items.get(position);
 
+        Intent intent = new Intent(this, DetailPage.class);
+        Bundle bundle = new Bundle();
 
-        for (int i=0; i< itemName.length; i++){
-            ItemModel.add(new ItemModel(itemName[i],
-                    storeName[i],
-                    storeDetail[i],
-                    itemPrice[i],
-                    itemImg[i]));
-        }
+        bundle.putParcelable("ItemDetail", selectedItem);
+        bundle.putString("gameName", gameName);
+        intent.putExtras(bundle);
+
+        startActivity(intent);
     }
 }
