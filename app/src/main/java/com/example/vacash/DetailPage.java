@@ -1,11 +1,13 @@
 package com.example.vacash;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import com.example.vacash.models.GameWithItems;
 import com.example.vacash.models.GlobalVariable;
 import com.example.vacash.models.ItemModel;
+import com.example.vacash.models.TransactionModel;
 
 public class DetailPage extends AppCompatActivity {
     LinearLayout minus, plus;
@@ -20,7 +23,7 @@ public class DetailPage extends AppCompatActivity {
     Button payBtn;
 
     String gameName;
-    Integer qty, totalPrice;
+    Integer qty;
 
     ItemModel selectedItem;
     ImageView itemImage;
@@ -47,6 +50,43 @@ public class DetailPage extends AppCompatActivity {
 
         gameNameField = findViewById(R.id.gameName);
         gameNameField.setText(gameName);
+    }
+
+    public void showError (String msg) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Error").setMessage(msg);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void validateForm () {
+        EditText usernameField = findViewById(R.id.usernameField);
+        String username = usernameField.getText().toString();
+
+        EditText emailField = findViewById(R.id.emailField);
+        String email = emailField.getText().toString();
+        Integer totalPrice = qty * Integer.parseInt(selectedItem.getItemPrice());
+
+        if (email.isEmpty()) {
+            showError("Email must be filled");
+        } else if (!email.contains("@")) {
+            showError("Email must contain '@'.");
+        } else if (!email.endsWith(".com")) {
+            showError("Email must end with '.com'.");
+        } else if (username.isEmpty()) {
+            showError("Username must be filled");
+        } else if (qty <= 0) {
+            showError("Quantity must be more than 0");
+        } else if (GlobalVariable.accountBalance < totalPrice) {
+            showError("Not enough balance");
+        } else {
+            GlobalVariable.accountBalance = GlobalVariable.accountBalance - totalPrice;
+            GlobalVariable.transactions.add(new TransactionModel(gameName, selectedItem.getItemName(), totalPrice, qty, selectedItem.getItemImg()));
+
+            Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -95,10 +135,6 @@ public class DetailPage extends AppCompatActivity {
 
         // pay button
         payBtn = findViewById(R.id.payButton);
-        payBtn.setOnClickListener(v -> {
-            // validasi email, username, account balance
-            // tambahin transaction ke account
-            // redirect ke profile
-        });
+        payBtn.setOnClickListener(v -> validateForm());
     }
 }

@@ -5,12 +5,18 @@ public class TransactionModel {
     private String itemName;
     private Integer price;
     private Integer quantity;
+    private Integer itemIcon;
 
-    public TransactionModel(String gameName, String itemName, int price, int quantity) {
+    public TransactionModel(String gameName, String itemName, int price, int quantity, int itemIcon) {
         this.gameName = gameName;
         this.itemName = itemName;
         this.price = price;
         this.quantity = quantity;
+        this.itemIcon = itemIcon;
+    }
+
+    public Integer getItemIcon() {
+        return itemIcon;
     }
 
     public String getGameName() {

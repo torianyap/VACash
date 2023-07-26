@@ -10,7 +10,7 @@ import java.util.Locale;
 public class GlobalVariable {
     public static String username = "";
     public static String email = "";
-    public static Integer accountBalance = 0;
+    public static Integer accountBalance = 1000000;
 
     public static ArrayList<GameWithItems> games = new ArrayList<>();
     public static ArrayList<TransactionModel> transactions = new ArrayList<>();
@@ -116,7 +116,7 @@ public class GlobalVariable {
         gta.items.add(new ItemModel("Red Shark Cash Card", "Asixx Store", "Trusted since 2020", "55000", R.drawable.gta));
         games.add(gta);
 
-        // CoD
+        // COD
         GameWithItems cod = new GameWithItems("Call of Duty", "PC", "Activision", 4.3, R.drawable.codpc);
         cod.items.add(new ItemModel("6 Bell Bags", "GGwp Store", "Trusted since 2020", "69000", R.drawable.cod));
         cod.items.add(new ItemModel("45 Bell Bags", "GGwp Store", "Trusted since 2020", "69000", R.drawable.cod));
@@ -152,7 +152,7 @@ public class GlobalVariable {
         eldenring.items.add(new ItemModel("Spirit Calling Bell", "HatBox Store", "Trusted since 2019", "66000", R.drawable.eldenring));
         games.add(eldenring);
 
-        // Animal
+        // Animal Crossing
         GameWithItems animal = new GameWithItems("Animal Crossing", "Console", "Nintendo", 4.4, R.drawable.animalcrossingconsole);
         animal.items.add(new ItemModel("6 Bell Bags", "GGwp Store", "Trusted since 2020", "1000", R.drawable.animal));
         animal.items.add(new ItemModel("45 Bell Bags", "GGwp Store", "Trusted since 2020", "13000", R.drawable.animal));
@@ -161,8 +161,8 @@ public class GlobalVariable {
 
         // Pokemon
         GameWithItems pokemon = new GameWithItems("Pokemon Arceus", "Console", "Nintendon & Pokemon", 4.3, R.drawable.pokemonconsole);
-        animal.items.add(new ItemModel("Pokeball Legendary", "PokiPoki", "Trusted since 2018", "25000", R.drawable.pokemon));
-        animal.items.add(new ItemModel("Pokeball Normal", "LetsBattle", "Trusted since 2019", "48000", R.drawable.pokemon));
+        pokemon.items.add(new ItemModel("Pokeball Legendary", "PokiPoki", "Trusted since 2018", "25000", R.drawable.pokemon));
+        pokemon.items.add(new ItemModel("Pokeball Normal", "LetsBattle", "Trusted since 2019", "48000", R.drawable.pokemon));
         games.add(pokemon);
 
         // Hogwarts
@@ -178,6 +178,5 @@ public class GlobalVariable {
         sims.items.add(new ItemModel("45 Bell Bags", "GGwp Store", "Trusted since 2020", "69000", R.drawable.sims));
         sims.items.add(new ItemModel("90 Bell Bags", "HatBox Store", "Trusted since 2019", "479000", R.drawable.sims));
         games.add(sims);
-
     }
 }
