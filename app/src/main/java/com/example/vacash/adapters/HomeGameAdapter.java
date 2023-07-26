@@ -1,6 +1,9 @@
 package com.example.vacash.adapters;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +42,12 @@ public class HomeGameAdapter extends RecyclerView.Adapter<HomeGameAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.gameImage.setImageResource(games.get(position).getGameIcon());
+        int size = 10;
+        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), games.get(position).getGameIcon());
+        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
+        originalBitmap.recycle();
+        holder.gameImage.setImageBitmap(resized);
+
         holder.gameName.setText(games.get(position).getGameName());
         holder.gameDeveloper.setText(games.get(position).getGameDeveloper());
         holder.gameRating.setText(games.get(position).getRating().toString());
