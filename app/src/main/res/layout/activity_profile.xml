@@ -48,122 +48,133 @@
         android:layout_gravity="center"
         android:layout_marginTop="-105dp"
         app:cardCornerRadius="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
             android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:orientation="vertical">
+
             <ImageView
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/profile"/>
+                android:src="@drawable/profile" />
+
             <TextView
                 android:id="@+id/username"
                 android:layout_width="300dp"
                 android:layout_height="25dp"
-                android:text="User823"
-                android:textSize="16dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppinssemibold"
                 android:gravity="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/lightpurple"/>
+                android:text="User823"
+                android:textColor="@color/lightpurple"
+                android:textSize="16dp" />
+
             <TextView
                 android:id="@+id/email"
                 android:layout_width="300dp"
                 android:layout_height="25dp"
-                android:text="user@mail.com"
-                android:textSize="12dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppinsregular"
                 android:gravity="center"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/grey"/>
+                android:text="user@mail.com"
+                android:textColor="@color/grey"
+                android:textSize="12dp" />
+
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:columnCount="3"
-                android:rowCount="1"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:useDefaultMargins="true"
                 android:alignmentMode="alignMargins"
-                android:columnOrderPreserved="false">
+                android:columnCount="3"
+                android:columnOrderPreserved="false"
+                android:orientation="horizontal"
+                android:rowCount="1"
+                android:useDefaultMargins="true">
 
                 <LinearLayout
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="end">
+                    android:gravity="end"
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:text="Your Balance"
-                        android:textSize="13dp"
-                        android:textColor="@color/lightpurple"
                         android:fontFamily="@font/poppinssemibold"
-                        android:gravity="end"/>
+                        android:gravity="end"
+                        android:text="Your Balance"
+                        android:textColor="@color/lightpurple"
+                        android:textSize="13dp" />
+
                     <TextView
                         android:id="@+id/accBalance"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="0 IDR"
-                        android:textSize="16dp"
-                        android:textColor="@color/black"
                         android:fontFamily="@font/poppinssemibold"
-                        />
+                        android:text="0 IDR"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
                 </LinearLayout>
-                
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/line_profile"
-                        />
+                        android:src="@drawable/line_profile" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="start">
+                    android:gravity="start"
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:text="Topup Balance"
-                        android:textSize="12dp"
                         android:fontFamily="@font/poppinssemibold"
+                        android:gravity="start"
+                        android:text="Topup Balance"
                         android:textColor="@color/lightpurple"
-                        android:gravity="start"/>
+                        android:textSize="12dp" />
+
                     <TextView
                         android:id="@+id/topupError"
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
-                        android:text="Error messsage"
-                        android:textSize="7dp"
-                        android:visibility="invisible"
                         android:fontFamily="@font/poppinsregular"
-                        android:textColor="@color/red"/>
+                        android:text="Error messsage"
+                        android:textColor="@color/red"
+                        android:textSize="7dp"
+                        android:visibility="invisible" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
+
                         <EditText
                             android:id="@+id/topupField"
                             android:layout_width="90dp"
                             android:layout_height="match_parent"
-                            android:hint="min 0 IDR"
-                            android:textSize="10dp"
                             android:fontFamily="@font/poppinsregular"
-                            android:textColor="@color/black"/>
+                            android:hint="min 0 IDR"
+                            android:textColor="@color/black"
+                            android:textSize="10dp" />
+
                         <Button
                             android:id="@+id/topupBtn"
                             android:layout_width="40dp"
                             android:layout_height="match_parent"
-                            android:text="✓"
-                            android:backgroundTint="@color/lightpurple"/>
+                            android:backgroundTint="@color/lightpurple"
+                            android:text="✓" />
                     </LinearLayout>
                 </LinearLayout>
             </GridLayout>
@@ -173,7 +184,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pastTransactionRV"
         android:layout_width="wrap_content"
-        android:layout_height="215dp"
+        android:layout_height="198dp"
         android:layout_gravity="center"
         android:layout_marginTop="160dp" />
 

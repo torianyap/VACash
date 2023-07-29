@@ -303,8 +303,8 @@
 
         <Button
             android:id="@+id/payButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="121dp"
+            android:layout_height="46dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="PAY"
             android:textColor="#ed6c82"
