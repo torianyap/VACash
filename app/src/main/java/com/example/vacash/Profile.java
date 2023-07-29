@@ -4,11 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.example.vacash.adapters.TransactionAdapter;
@@ -25,6 +31,10 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
     TextView username, email, accBalance, topupError;
     EditText topUpField;
     Button topupBtn;
+
+    ImageButton homeIcon;
+    ImageButton hamburgerIcon;
+    AnimatorSet slideDownAnimatorSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +74,58 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
 
         pastTransactions.setAdapter(adapter);
         pastTransactions.setLayoutManager(new LinearLayoutManager(this));
+
+        homeIcon = findViewById(R.id.home_icon);
+        hamburgerIcon = findViewById(R.id.hamburgerIcon);
+
+        slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
+        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu);
+
+        homeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateToHome();
+            }
+        });
+
+        hamburgerIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopupMenu(view);
+            }
+        });
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_logout:
+                        navigateToLogout();
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        slideDownAnimatorSet.start();
+        popupMenu.show();
+
+        // Change background color when the dropdown is shown
+//        mainLayout.setBackgroundColor(Color.parseColor("#800080")); // Purple color with 50% opacity
+    }
+
+    private void navigateToLogout() {
+        Intent intent = new Intent(this, SplashPage.class);
+        startActivity(intent);
+    }
+    private void navigateToHome() {
+        Intent intent = new Intent(this, Homepage.class);
+        startActivity(intent);
     }
 
     public void showError (String msg) {
