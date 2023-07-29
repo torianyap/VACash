@@ -22,13 +22,13 @@
             android:layout_height="48dp"
             android:layout_margin="30dp"
             android:layout_marginStart="28dp"
-            android:background="@drawable/home_icon"
+            android:background="@drawable/baseline_home_24"
             android:gravity="start" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="30dp"
             android:layout_marginTop="76dp"
             android:fontFamily="@font/poppinssemibold"
             android:gravity="center"
@@ -41,7 +41,7 @@
             android:id="@+id/hamburgerIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginStart="24dp"
             android:background="@drawable/bar_icon"
             android:gravity="end" />
     </androidx.appcompat.widget.Toolbar>
@@ -194,13 +194,12 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="320dp"
-        android:backgroundTint="@color/red"
-        android:text="Logout"
+        android:backgroundTint="@color/redbtn"
         android:drawableLeft="@drawable/power_icon"
         android:fontFamily="@font/poppinssemibold"
-        android:textSize="17sp"
-        />
+        android:text="Log Out"
+        android:textSize="17sp" />
 </FrameLayout>
