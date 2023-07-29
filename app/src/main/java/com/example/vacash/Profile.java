@@ -79,7 +79,7 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
         hamburgerIcon = findViewById(R.id.hamburgerIcon);
 
         slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
-        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu);
+        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu_profile);
 
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +98,7 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
 
     private void showPopupMenu(View view) {
         PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
-        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu_profile, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
             @Override
