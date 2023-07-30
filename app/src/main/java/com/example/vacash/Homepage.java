@@ -4,9 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 
 import com.example.vacash.adapters.CarouselAdapter;
 import com.example.vacash.adapters.HomeTabAdapter;
@@ -27,6 +35,8 @@ public class Homepage extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewpagertab;
     HomeTabAdapter adapter;
+    ImageButton hamburgerIcon;
+    AnimatorSet slideDownAnimatorSet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         GlobalVariable.init();
@@ -86,6 +96,54 @@ public class Homepage extends AppCompatActivity {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
+        hamburgerIcon = findViewById(R.id.hamburgerIcon);
+
+        slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
+        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu);
+
+        hamburgerIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopupMenu(view);
+            }
+        });
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_profile:
+                        navigateToProfile();
+                        return true;
+                    case R.id.menu_logout:
+                        navigateToLogout();
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        slideDownAnimatorSet.start();
+        popupMenu.show();
+
+        // Change background color when the dropdown is shown
+//        mainLayout.setBackgroundColor(Color.parseColor("#800080")); // Purple color with 50% opacity
+    }
+
+    private void navigateToLogout() {
+        Intent intent = new Intent(this, SplashPage.class);
+        startActivity(intent);
+    }
+
+    private void navigateToProfile() {
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
     }
 
     void imageChange(){

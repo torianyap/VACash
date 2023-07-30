@@ -35,13 +35,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:fontFamily="@font/poppinssemibold"
-        android:text="Item Page"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:fontFamily="@font/poppinssemibold"
         app:layout_constraintEnd_toStartOf="@+id/hamburgerIcon"
         app:layout_constraintStart_toEndOf="@+id/home_icon"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Item Page"
+         />
 
     <TextView
         android:id="@+id/textView5"
@@ -68,7 +69,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mRecycleView"
-        android:layout_width="354dp"
+        android:layout_width="379dp"
         android:layout_height="487dp"
         android:layout_marginTop="26dp"
         android:layout_marginBottom="28dp"
