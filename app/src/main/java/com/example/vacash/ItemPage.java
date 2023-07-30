@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,7 +76,8 @@ public class ItemPage extends AppCompatActivity implements RecyclerViewInterface
 
 
     private void showPopupMenu(View view) {
-        PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
+        Context wrapper = new ContextThemeWrapper(this, R.style.MenuStyle);
+        PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.END);
         popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 

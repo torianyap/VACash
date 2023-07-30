@@ -6,8 +6,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import com.example.vacash.adapters.CarouselAdapter;
 import com.example.vacash.adapters.HomeTabAdapter;
@@ -37,6 +40,7 @@ public class Homepage extends AppCompatActivity {
     HomeTabAdapter adapter;
     ImageButton hamburgerIcon;
     AnimatorSet slideDownAnimatorSet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         GlobalVariable.init();
@@ -111,10 +115,11 @@ public class Homepage extends AppCompatActivity {
     }
 
     private void showPopupMenu(View view) {
-        PopupMenu popupMenu = new PopupMenu(this, view, Gravity.END);
+        Context wrapper = new ContextThemeWrapper(this, R.style.MenuStyle);
+        PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.END);
         popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
