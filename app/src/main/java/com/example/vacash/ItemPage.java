@@ -17,7 +17,6 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.example.vacash.adapters.ItemPageAdapter;
-import com.example.vacash.models.GlobalVariable;
 import com.example.vacash.models.ItemModel;
 import com.example.vacash.models.RecyclerViewInterface;
 
@@ -115,9 +114,18 @@ public class ItemPage extends AppCompatActivity implements RecyclerViewInterface
         startActivity(intent);
     }
 
+//    private View background;
+
     @Override
     public void onItemClick(int position) {
         ItemModel selectedItem = items.get(position);
+//        background = findViewById(R.id.gantiwarna);
+//
+//        background.setOnClickListener(v -> {
+//            background.setBackgroundColor(getResources().getColor(R.color.bgdarkblue));
+//        });
+
+//        background.setBackgroundColor(getResources().getColor(R.color.bgdarkblue));
 
         Intent intent = new Intent(this, DetailPage.class);
         Bundle bundle = new Bundle();
@@ -128,4 +136,6 @@ public class ItemPage extends AppCompatActivity implements RecyclerViewInterface
 
         startActivity(intent);
     }
+
+
 }

@@ -91,6 +91,8 @@ public class DetailPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        qty = 0;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_page);
 

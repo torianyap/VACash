@@ -6,6 +6,7 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,11 +46,16 @@ public class GlobalVariable {
 //        NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
 //        return formatter.format(toBeFormatted);
 
-        StringBuilder sb = new StringBuilder(num);
-        sb.reverse();
-        Iterable<String> tokens = Splitter.fixedLength(3).split(sb.toString());
+//        StringBuilder sb = new StringBuilder(num);
+//        sb.reverse();
+//        Iterable<String> tokens = Splitter.fixedLength(3).split(sb.toString());
+//
+//        return Joiner.on('.').join(ImmutableList.copyOf(tokens).reverse()) + " IDR";
 
-        return Joiner.on('.').join(ImmutableList.copyOf(tokens).reverse()) + " IDR";
+        DecimalFormat formatter = new DecimalFormat("###,###,###,### IDR");
+        Double number = Double.valueOf(num);
+
+        return formatter.format(number);
     }
 
     public static String countTotalPrice (String price, Integer qty) {
@@ -59,6 +65,7 @@ public class GlobalVariable {
     }
 
     public static void init () {
+        if (!games.isEmpty()) return;
         // mobile legend
         GameWithItems mobileLegend = new GameWithItems("Mobile Legend", "Mobile", "Moontoon", 4.5, R.drawable.mobilelegendmobile);
         mobileLegend.items.add(new ItemModel("Twilight Pass", "Suka Maju", "Product sent by seller within 10 minutes", "51000", R.drawable.ml));
