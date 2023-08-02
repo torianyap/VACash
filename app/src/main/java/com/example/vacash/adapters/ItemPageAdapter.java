@@ -1,6 +1,8 @@
 package com.example.vacash.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,11 +41,16 @@ public class ItemPageAdapter extends RecyclerView.Adapter<ItemPageAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull ItemPageAdapter.MyViewHolder holder, int position) {
+        int size = 10;
+        Bitmap originalBitmap = BitmapFactory.decodeResource(context.getResources(), itemModels.get(position).getItemImg());
+        Bitmap resized = Bitmap.createScaledBitmap(originalBitmap, originalBitmap.getWidth() / size, originalBitmap.getHeight() / size, true);
+        originalBitmap.recycle();
+        holder.imageView.setImageBitmap(resized);
+
         holder.itemName.setText(itemModels.get(position).getItemName());
         holder.storeName.setText(itemModels.get(position).getStoreName());
         holder.storeDetail.setText(itemModels.get(position).getStoreDetail());
         holder.itemPrice.setText(GlobalVariable.formatCurrency(itemModels.get(position).getItemPrice()));
-        holder.imageView.setImageResource(itemModels.get(position).getItemImg());
     }
 
     @Override

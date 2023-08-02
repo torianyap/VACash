@@ -101,7 +101,7 @@ public class GlobalVariable {
         games.add(genshin);
 
         // PUBG
-        GameWithItems pubg = new GameWithItems("PUBG Mobile", "Mobile", "Krafton", 4.8, R.drawable.pubgmobile);
+        GameWithItems pubg = new GameWithItems("PUBG", "Mobile", "Krafton", 4.8, R.drawable.pubgmobile);
         pubg.items.add(new ItemModel("30 Battle Coin", "Mengg33", "Trusted since 2020", "7000", R.drawable.pubg));
         pubg.items.add(new ItemModel("40 Battle Coin", "Mengg33", "Trusted since 2020", "9000", R.drawable.pubg));
         pubg.items.add(new ItemModel("60 Battle Coin", "Mengg33", "Trusted since 2020", "13400", R.drawable.pubg));
@@ -112,7 +112,7 @@ public class GlobalVariable {
         GameWithItems growtopia = new GameWithItems("Growtopia", "Mobile", "Ubisoft", 4.7, R.drawable.growtopiamobile);
         growtopia.items.add(new ItemModel("World Lock", "GGwp Store", "Trusted since 2020", "1000", R.drawable.growtopia));
         growtopia.items.add(new ItemModel("Bunny Lock", "GGwp Store", "Trusted since 2020", "3000", R.drawable.growtopia));
-        growtopia.items.add(new ItemModel("Green Gem Box", "GGwp Store", "Trusted since 2019", "366000", R.drawable.growtopia));
+        growtopia.items.add(new ItemModel("Green Gem Box", "HatBox Store", "Trusted since 2019", "366000", R.drawable.growtopia));
 
         games.add(growtopia);
 
@@ -125,7 +125,7 @@ public class GlobalVariable {
         games.add(apex);
 
         // GTA V
-        GameWithItems gta = new GameWithItems("GTA V", "PC", "Rockstar Games", 4.4, R.drawable.gtapc);
+        GameWithItems gta = new GameWithItems("Grand Theft Auto V", "PC", "Rockstar Games", 4.4, R.drawable.gtapc);
         gta.items.add(new ItemModel("Great White Shark Cash Card", "GGwp Store", "Trusted since 2020", "180000", R.drawable.gta));
         gta.items.add(new ItemModel("Tiger Shark Cash Card", "GGwp Store", "Trusted since 2020", "155000", R.drawable.gta));
         gta.items.add(new ItemModel("Whale Shark Cash Card", "HatBox Store", "Trusted since 2019", "66000", R.drawable.gta));
@@ -134,9 +134,10 @@ public class GlobalVariable {
 
         // COD
         GameWithItems cod = new GameWithItems("Call of Duty", "PC", "Activision", 4.3, R.drawable.codpc);
-        cod.items.add(new ItemModel("6 Bell Bags", "GGwp Store", "Trusted since 2020", "69000", R.drawable.cod));
-        cod.items.add(new ItemModel("45 Bell Bags", "GGwp Store", "Trusted since 2020", "69000", R.drawable.cod));
-        cod.items.add(new ItemModel("90 Bell Bags", "HatBox Store", "Trusted since 2019", "479000", R.drawable.cod));
+        cod.items.add(new ItemModel("500 CP", "Abcd Store", "Trusted since 2020", "100000", R.drawable.cod));
+        cod.items.add(new ItemModel("1100 CP", "Kukira Store", "Trusted since 2020", "195000", R.drawable.cod));
+        cod.items.add(new ItemModel("2400 CP", "HatBox Store", "Trusted since 2019", "390000", R.drawable.cod));
+        cod.items.add(new ItemModel("5000 CP", "Asixx Store", "Trusted since 2020", "655000", R.drawable.cod));
         games.add(cod);
 
         // Valorant
@@ -150,7 +151,7 @@ public class GlobalVariable {
         GameWithItems fifa = new GameWithItems("FIFA 20", "PC", "EA Sports", 4.7, R.drawable.fifapc);
         fifa.items.add(new ItemModel("Voucher Point 1050", "GGwp Store", "Trusted since 2020", "50000", R.drawable.fifa));
         fifa.items.add(new ItemModel("Voucher Point 1600", "GGwp Store", "Trusted since 2020", "80000", R.drawable.fifa));
-        fifa.items.add(new ItemModel("Voucher Point 2200", "AJP Store", "Trusted since 2019", "110000", R.drawable.fifa));
+        fifa.items.add(new ItemModel("Voucher Point 2200", "HatBox Store", "Trusted since 2019", "110000", R.drawable.fifa));
         games.add(fifa);
 
         // Minecraft
@@ -190,9 +191,9 @@ public class GlobalVariable {
 
         // Sims
         GameWithItems sims = new GameWithItems("The Sims 4", "Console", "Electronic Arts", 4.3, R.drawable.sims4console);
-        sims.items.add(new ItemModel("6 Bell Bags", "GGwp Store", "Trusted since 2020", "69000", R.drawable.sims));
-        sims.items.add(new ItemModel("45 Bell Bags", "GGwp Store", "Trusted since 2020", "69000", R.drawable.sims));
-        sims.items.add(new ItemModel("90 Bell Bags", "HatBox Store", "Trusted since 2019", "479000", R.drawable.sims));
+        sims.items.add(new ItemModel("Basement Treasure Package", "GGwp Store", "Trusted since 2020", "69000", R.drawable.sims));
+        sims.items.add(new ItemModel("Greenhouse Haven Package", "GGwp Store", "Trusted since 2020", "69000", R.drawable.sims));
+        sims.items.add(new ItemModel("Snowy Escape Package", "HatFam Store", "Trusted since 2019", "479000", R.drawable.sims));
         games.add(sims);
     }
 }
