@@ -136,9 +136,6 @@ public class Homepage extends AppCompatActivity {
         });
         slideDownAnimatorSet.start();
         popupMenu.show();
-
-        // Change background color when the dropdown is shown
-//        mainLayout.setBackgroundColor(Color.parseColor("#800080")); // Purple color with 50% opacity
     }
 
     private void navigateToLogout() {

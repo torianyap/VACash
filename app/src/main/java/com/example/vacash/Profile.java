@@ -101,7 +101,7 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
     private void showPopupMenu(View view) {
         Context wrapper = new ContextThemeWrapper(this, R.style.MenuStyle);
         PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.END);
-        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu_profile, popupMenu.getMenu());
+        popupMenu.getMenuInflater().inflate(R.menu.dropdown_menu, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
             @Override
