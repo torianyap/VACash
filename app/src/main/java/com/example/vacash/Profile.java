@@ -81,7 +81,7 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
         hamburgerIcon = findViewById(R.id.hamburgerIcon);
 
         slideDownAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.slide_down);
-        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu_profile);
+        slideDownAnimatorSet.setTarget(R.menu.dropdown_menu);
 
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +107,9 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
+                    case R.id.menu_profile:
+                        navigateToProfile();
+                        return true;
                     case R.id.menu_logout:
                         navigateToLogout();
                         return true;
@@ -120,6 +123,11 @@ public class Profile extends AppCompatActivity implements RecyclerViewInterface 
 
         // Change background color when the dropdown is shown
 //        mainLayout.setBackgroundColor(Color.parseColor("#800080")); // Purple color with 50% opacity
+    }
+
+    private void navigateToProfile() {
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
     }
 
     private void navigateToLogout() {
